@@ -69,7 +69,7 @@
 &kp LCTRL       &kp A   &kp LBKT  &kp RBKT                                                                        &kp RALT   &kp EQUAL  &kp SPACE  &mo 1
                                             &mo 2   &kp ENTER                                 &kp A     &kp HOME
                                                     &kp BACKSPACE  &kp LSHIFT  &kp BACKSPACE  &kp LGUI
-                                                    &to GAME       &kp HOME
+                                                    &to GAME       &kp HOME    &kp BACKSPACE  &kp LGUI
             >;
         };
 
