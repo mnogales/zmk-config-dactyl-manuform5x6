@@ -1,9 +1,6 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/mouse.h>
-#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/keys.h>
 
 #define DEFAULT 0
 #define LWR 1
@@ -12,9 +9,7 @@
 #define NAV 4
 #define GAME 5
 
-
 / {
-
     // macros {
     //     ZMK_MACRO(lwr_macro,
     //         wait-ms = <30>;
@@ -27,7 +22,6 @@
     //             , <&macro_tap &rgb_ug RGB_EFF>
     //             , <&macro_tap &rgb_ug RGB_EFR>;
     //     )
-
     //     ZMK_MACRO(rse_macro,
     //         wait-ms = <30>;
     //         tap-ms = <40>;
@@ -39,7 +33,6 @@
     //             , <&macro_tap &rgb_ug RGB_EFF>
     //             , <&macro_tap &rgb_ug RGB_EFR>;
     //     )
-
     //     ZMK_MACRO(adj_macro,
     //         wait-ms = <30>;
     //         tap-ms = <40>;
@@ -51,7 +44,6 @@
     //             , <&macro_tap &rgb_ug RGB_EFF>
     //             , <&macro_tap &rgb_ug RGB_EFR>;
     //     )
-
     //     ZMK_MACRO(nav_macro,
     //         wait-ms = <30>;
     //         tap-ms = <40>;
@@ -65,87 +57,85 @@
     //     )
     // };
 
-
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-                &kp ESC     &kp N1 &kp N2   &kp N3 &kp N4   &kp N5              &kp N6   &kp N7    &kp N8    &kp N9    &kp N0   &kp BSPC
-                &kp GRAVE   &kp Q  &kp W    &kp E  &kp R    &kp T               &kp Y    &kp U     &kp I     &kp O     &kp P    &kp MINUS
-                &kp TAB     &kp A  &kp S    &kp D  &kp F    &kp G               &kp H    &kp J     &kp K     &kp L     &kp SEMI &kp SQT
-                &kp LCTRL   &kp Z  &kp X    &kp C  &kp V    &kp B               &kp N    &kp M     &kp COMMA &kp DOT   &kp FSLH &kp BSLH
-                &kp LCTRL   &kp A  &kp LBKT &kp RBKT                                               &kp RALT  &kp EQUAL &kp A    &kp B
-                                                   &mo      &kp SPACE           &kp A       &kp RET
-                                                   &to NAV  &kp LSHIFT          &kp B       &kp LGUI
-                                                   &to GAME &kp HOME            &kp END     &mo RSE
+&kp GRAVE       &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                           &kp N6      &kp N7     &kp N8     &kp N9     &kp N0    &kp BSPC
+&kp TAB         &kp Q   &kp W     &kp E     &kp R      &kp T                            &kp Y       &kp U      &kp I      &kp O      &kp P     &kp MINUS
+&kp CAPSLOCK    &kp A   &kp S     &kp D     &kp F      &kp G                            &kp H       &kp J      &kp K      &kp L      &kp SEMI  &kp SQT
+&kp LEFT_SHIFT  &kp Z   &kp X     &kp C     &kp V      &kp B                            &kp N       &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp RIGHT_SHIFT
+&kp LCTRL       &kp A   &kp LBKT  &kp RBKT                                                                     &kp RALT   &kp EQUAL
+                                            &kp SPACE  &mo 1                            &mo 2       &kp ENTER
+                                                       &kp A   &kp HOME  &kp BACKSPACE  &kp LSHIFT
+                                                       &kp B   &kp LGUI  &to GAME       &kp HOME
             >;
         };
+
         lower_layer {
             bindings = <
-                &kp ESC     &kp N1 &kp N2   &kp N3 &kp N4   &kp N5              &kp N6   &kp N7    &kp N8    &kp N9    &kp N0   &kp BSPC
-                &kp GRAVE   &kp Q  &kp W    &kp E  &kp R    &kp T               &kp Y    &kp U     &kp I     &kp O     &kp P    &kp MINUS
-                &kp TAB     &kp A  &kp S    &kp D  &kp F    &kp G               &kp H    &kp J     &kp K     &kp L     &kp SEMI &kp SQT
-                &kp LCTRL   &kp Z  &kp X    &kp C  &kp V    &kp B               &kp N    &kp M     &kp COMMA &kp DOT   &kp FSLH &kp BSLH
-                &kp LCTRL   &kp A  &kp LBKT &kp RBKT                                               &kp RALT  &kp EQUAL &kp A    &kp B
-                                                   &mo      &kp SPACE           &kp A       &kp RET
-                                                   &to NAV  &kp LSHIFT          &kp B       &kp LGUI
-                                                   &to GAME &kp HOME            &kp END     &mo RSE
-        >;
+&kp ESC    &kp N1  &kp N2    &kp N3    &kp N4  &kp N5                      &kp N6      &kp N7     &kp N8     &kp N9     &kp N0    &kp BSPC
+&kp GRAVE  &kp Q   &kp W     &kp E     &kp R   &kp T                       &kp Y       &kp U      &kp I      &kp O      &kp P     &kp MINUS
+&kp TAB    &kp A   &kp S     &kp D     &kp F   &kp G                       &kp H       &kp J      &kp K      &kp L      &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z   &kp X     &kp C     &kp V   &kp B                       &kp N       &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp BSLH
+&kp LCTRL  &kp A   &kp LBKT  &kp RBKT                                                             &kp RALT   &kp EQUAL
+                                       &kp A   &kp B                       &mo         &kp SPACE
+                                               &kp A   &kp RET   &to NAV   &kp LSHIFT
+                                               &kp B   &kp LGUI  &to GAME  &kp HOME
+            >;
         };
 
         raise_layer {
             bindings = <
-                &kp ESC     &kp N1 &kp N2   &kp N3 &kp N4   &kp N5              &kp N6   &kp N7    &kp N8    &kp N9    &kp N0   &kp BSPC
-                &kp GRAVE   &kp Q  &kp W    &kp E  &kp R    &kp T               &kp Y    &kp U     &kp I     &kp O     &kp P    &kp MINUS
-                &kp TAB     &kp A  &kp S    &kp D  &kp F    &kp G               &kp H    &kp J     &kp K     &kp L     &kp SEMI &kp SQT
-                &kp LCTRL   &kp Z  &kp X    &kp C  &kp V    &kp B               &kp N    &kp M     &kp COMMA &kp DOT   &kp FSLH &kp BSLH
-                &kp LCTRL   &kp A  &kp LBKT &kp RBKT                                               &kp RALT  &kp EQUAL &kp A    &kp B
-                                                   &mo      &kp SPACE           &kp A       &kp RET
-                                                   &to NAV  &kp LSHIFT          &kp B       &kp LGUI
-                                                   &to GAME &kp HOME            &kp END     &mo RSE
+&kp ESC    &kp N1  &kp N2    &kp N3    &kp N4  &kp N5                      &kp N6      &kp N7     &kp N8     &kp N9     &kp N0    &kp BSPC
+&kp GRAVE  &kp Q   &kp W     &kp E     &kp R   &kp T                       &kp Y       &kp U      &kp I      &kp O      &kp P     &kp MINUS
+&kp TAB    &kp A   &kp S     &kp D     &kp F   &kp G                       &kp H       &kp J      &kp K      &kp L      &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z   &kp X     &kp C     &kp V   &kp B                       &kp N       &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp BSLH
+&kp LCTRL  &kp A   &kp LBKT  &kp RBKT                                                             &kp RALT   &kp EQUAL
+                                       &kp A   &kp B                       &mo         &kp SPACE
+                                               &kp A   &kp RET   &to NAV   &kp LSHIFT
+                                               &kp B   &kp LGUI  &to GAME  &kp HOME
             >;
         };
 
         adjust_layer {
             bindings = <
-                &kp ESC     &kp N1 &kp N2   &kp N3 &kp N4   &kp N5              &kp N6   &kp N7    &kp N8    &kp N9    &kp N0   &kp BSPC
-                &kp GRAVE   &kp Q  &kp W    &kp E  &kp R    &kp T               &kp Y    &kp U     &kp I     &kp O     &kp P    &kp MINUS
-                &kp TAB     &kp A  &kp S    &kp D  &kp F    &kp G               &kp H    &kp J     &kp K     &kp L     &kp SEMI &kp SQT
-                &kp LCTRL   &kp Z  &kp X    &kp C  &kp V    &kp B               &kp N    &kp M     &kp COMMA &kp DOT   &kp FSLH &kp BSLH
-                &kp LCTRL   &kp A  &kp LBKT &kp RBKT                                               &kp RALT  &kp EQUAL &kp A    &kp B
-                                                   &mo      &kp SPACE           &kp A       &kp RET
-                                                   &to NAV  &kp LSHIFT          &kp B       &kp LGUI
-                                                   &to GAME &kp HOME            &kp END     &mo RSE
+&kp ESC    &kp N1  &kp N2    &kp N3    &kp N4  &kp N5                      &kp N6      &kp N7     &kp N8     &kp N9     &kp N0    &kp BSPC
+&kp GRAVE  &kp Q   &kp W     &kp E     &kp R   &kp T                       &kp Y       &kp U      &kp I      &kp O      &kp P     &kp MINUS
+&kp TAB    &kp A   &kp S     &kp D     &kp F   &kp G                       &kp H       &kp J      &kp K      &kp L      &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z   &kp X     &kp C     &kp V   &kp B                       &kp N       &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp BSLH
+&kp LCTRL  &kp A   &kp LBKT  &kp RBKT                                                             &kp RALT   &kp EQUAL
+                                       &kp A   &kp B                       &mo         &kp SPACE
+                                               &kp A   &kp RET   &to NAV   &kp LSHIFT
+                                               &kp B   &kp LGUI  &to GAME  &kp HOME
             >;
         };
-        
+
         navigation_layer {
             bindings = <
-                &kp ESC     &kp N1 &kp N2   &kp N3 &kp N4   &kp N5              &kp N6   &kp N7    &kp N8    &kp N9    &kp N0   &kp BSPC
-                &kp GRAVE   &kp Q  &kp W    &kp E  &kp R    &kp T               &kp Y    &kp U     &kp I     &kp O     &kp P    &kp MINUS
-                &kp TAB     &kp A  &kp S    &kp D  &kp F    &kp G               &kp H    &kp J     &kp K     &kp L     &kp SEMI &kp SQT
-                &kp LCTRL   &kp Z  &kp X    &kp C  &kp V    &kp B               &kp N    &kp M     &kp COMMA &kp DOT   &kp FSLH &kp BSLH
-                &kp LCTRL   &kp A  &kp LBKT &kp RBKT                                               &kp RALT  &kp EQUAL &kp A    &kp B
-                                                   &mo      &kp SPACE           &kp A       &kp RET
-                                                   &to NAV  &kp LSHIFT          &kp B       &kp LGUI
-                                                   &to GAME &kp HOME            &kp END     &mo RSE
+&kp ESC    &kp N1  &kp N2    &kp N3    &kp N4  &kp N5                      &kp N6      &kp N7     &kp N8     &kp N9     &kp N0    &kp BSPC
+&kp GRAVE  &kp Q   &kp W     &kp E     &kp R   &kp T                       &kp Y       &kp U      &kp I      &kp O      &kp P     &kp MINUS
+&kp TAB    &kp A   &kp S     &kp D     &kp F   &kp G                       &kp H       &kp J      &kp K      &kp L      &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z   &kp X     &kp C     &kp V   &kp B                       &kp N       &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp BSLH
+&kp LCTRL  &kp A   &kp LBKT  &kp RBKT                                                             &kp RALT   &kp EQUAL
+                                       &kp A   &kp B                       &mo         &kp SPACE
+                                               &kp A   &kp RET   &to NAV   &kp LSHIFT
+                                               &kp B   &kp LGUI  &to GAME  &kp HOME
             >;
         };
-        
+
         gaming_layer {
             bindings = <
-                &kp ESC     &kp N1 &kp N2   &kp N3 &kp N4   &kp N5              &kp N6   &kp N7    &kp N8    &kp N9    &kp N0   &kp BSPC
-                &kp GRAVE   &kp Q  &kp W    &kp E  &kp R    &kp T               &kp Y    &kp U     &kp I     &kp O     &kp P    &kp MINUS
-                &kp TAB     &kp A  &kp S    &kp D  &kp F    &kp G               &kp H    &kp J     &kp K     &kp L     &kp SEMI &kp SQT
-                &kp LCTRL   &kp Z  &kp X    &kp C  &kp V    &kp B               &kp N    &kp M     &kp COMMA &kp DOT   &kp FSLH &kp BSLH
-                &kp LCTRL   &kp A  &kp LBKT &kp RBKT                                               &kp RALT  &kp EQUAL &kp A    &kp B
-                                                   &mo      &kp SPACE           &kp A       &kp RET
-                                                   &to NAV  &kp LSHIFT          &kp B       &kp LGUI
-                                                   &to GAME &kp HOME            &kp END     &mo RSE
+&kp ESC    &kp N1  &kp N2    &kp N3    &kp N4  &kp N5                      &kp N6      &kp N7     &kp N8     &kp N9     &kp N0    &kp BSPC
+&kp GRAVE  &kp Q   &kp W     &kp E     &kp R   &kp T                       &kp Y       &kp U      &kp I      &kp O      &kp P     &kp MINUS
+&kp TAB    &kp A   &kp S     &kp D     &kp F   &kp G                       &kp H       &kp J      &kp K      &kp L      &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z   &kp X     &kp C     &kp V   &kp B                       &kp N       &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp BSLH
+&kp LCTRL  &kp A   &kp LBKT  &kp RBKT                                                             &kp RALT   &kp EQUAL
+                                       &kp A   &kp B                       &mo         &kp SPACE
+                                               &kp A   &kp RET   &to NAV   &kp LSHIFT
+                                               &kp B   &kp LGUI  &to GAME  &kp HOME
             >;
         };
     };
-
-
 };
